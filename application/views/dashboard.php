@@ -42,7 +42,10 @@
 		 }
 
 		 #konten {
+		 	margin-left:14em;
+		 	padding-top: 1em;
 		 	padding-left: 5em;
+		 	padding-right: 2em;
 		 }
 	</style>
 	<script src="<?php echo base_url('assets/jquery-3.4.1.min.js') ?>"></script>
@@ -50,66 +53,58 @@
     <script src="<?php echo base_url('assets/semantic/semantic.min.js') ?>"></script>
 </head>
 <body>
-	<div class="ui sidebar vertical left menu overlay visible" style="-webkit-transition-duration: 0.1s; overflow: visible !important;">
-  <div class="item logo">
-    <img src="https://image.flaticon.com/icons/svg/866/866218.svg" /><img src="https://image.flaticon.com/icons/svg/866/866218.svg" style="display: none" />
-  </div>
+  <div class="ui sidebar vertical left menu overlay visible" style="-webkit-transition-duration: 0.1s; overflow: visible !important;">
+  <h2 class="ui small left aligned header">
+    <img class="ui image" src="<?php echo base_url('assets/logo.png') ?>">
+    <div class="content">
+    Aplikasi SPTLB
+    </div>
+  </h2>
   <div class="ui accordion">
-    <a class="item">
+    <a href="#" class="active item">
       <b>Dashboard</b>
     </a>
 
-    <a class="item">
-      <b>Seksi Pelayanan</b>
+    <a href="#" class="item">
+      <b>Cari Berkas</b>
     </a>
 
-    <a class="item" href="dashboard.html">Impor Berkas</a>
-    <a class="item">
-	    <div class="ui green horizontal label">99</div>
-	    Berkas Masuk
-	</a>
-    <a class="item">
-	    <div class="ui red horizontal label">99</div>
-	    Tindak Lanjut Berkas
-	</a>
+    <a class="title item"><b>Seksi XXX</b>  <i class="dropdown icon"></i></a>
+    <div class="content">
+	    <a class="active item" href="dashboard.html">Impor Berkas</a>
+	    <a class="item">
+		    <div class="ui green horizontal label">99</div>
+		    Berkas Masuk
+		</a>
+	    <a href="#" class="item">
+		    <div class="ui red horizontal label">99</div>
+		    Tindak Lanjut Berkas
+		</a>
+		<a href="#" class="item">
+		    Selesai
+		</a>
+    </div>
 
-    <a class="item">
-      <b>Seksi Waskon</b>
-    </a>
-
-    <a class="item">
-      <b>Seksi Pemeriksaan</b>
-    </a>
-    
-    <a class="item">
+    <a href="#" class="item">
       <b>Pengaturan</b>
     </a>
 
-    <a class="item">
-      <b>Tentang</b>
+    <a href="#" class="item">
+     <b>Tentang</b>
     </a>
-  </div>
-  <!-- <div class="ui dropdown item displaynone">
-    <z>Dashboard</z>
-    <i class="icon demo-icon heart icon-heart"></i>
 
-    <div class="menu">
-      <div class="header">
-        Dashboard
-      </div>
-      <div class="ui divider"></div>
-      <a class="item" href="dashboard.html">Dashboard
-                    </a>
-    </div>
-  </div> -->
+  </div>
 </div>
 <div class="pusher">
   <div class="ui menu asd borderless" style="border-radius: 0!important; border: 0; margin-left: 260px; -webkit-transition-duration: 0.1s;">
-    <a class="item openbtn">
+   <!--  <a class="item openbtn">
       <i class="icon content"></i>
-    </a>
+    </a> -->
     <a class="item">Dashboard</a>
     <div class="right menu">
+      <div class="item">
+        Heryan Dwiyoga Putra - Seksi Pemeriksaan
+      </div>
       <div class="item">
         <div class="ui red button">Keluar</div>
       </div>
@@ -117,7 +112,7 @@
   </div>
 </div>
 <div id="konten" class="ui grid">
-  <div class="fourteen wide column">
+  <div class="sixteen wide column">
 	<div class="ui segment">
 	  <p>Testssssssssssssssssssssssss</p>
 	</div>
@@ -128,28 +123,9 @@
 <script type="text/javascript">
 	// using context
 	$( document ).ready(function() {
-	   $(".openbtn").on("click", function() {
-	   $(".ui.sidebar").toggleClass("very thin icon");
-	   $(".asd").toggleClass("marginlefting");
-	   $(".sidebar z").toggleClass("displaynone");
-	   $(".ui.accordion").toggleClass("displaynone");
-	   $(".ui.dropdown.item").toggleClass("displayblock");
-
-	   $(".logo").find('img').toggle();
-
-	 })
-	 $(".ui.dropdown").dropdown({
-	   allowCategorySelection: true,
-	   transition: "fade up",
-	   context: 'sidebar',
-	   on: "hover"
-	 });
-
-	 $('.ui.accordion').accordion({
-	   selector: {
-
-	   }
-	 });
+		$('.ui.accordion').accordion({
+		   selector: {}
+		});
 	});
 </script>
 </html>
