@@ -55,4 +55,6 @@ $route['translate_uri_dashes'] = FALSE;
 
 // Custom Routes
 $route['dashboard'] = 'dashboard';
+$route['cari_berkas'] = 'cari';
+$route['berkas_masuk'] = 'modul/Berkas_masuk';
 
