@@ -34,7 +34,7 @@
 		      <td>1 / 2016</td>
 		      <td>Restitusi</td>
 		      <td>03/09/2019</td>
-		      <td><button class="ui small green button">Proses</button></td>
+		      <td><button class="ui small grey button">Detail</button></td>
 		    </tr>
 		  </tbody>
 	    </table>

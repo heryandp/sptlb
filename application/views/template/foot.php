@@ -4,6 +4,9 @@
 		$('.ui.accordion').accordion({
 		   selector: {}
 		});
+		$('.menu .item')
+		  .tab()
+		;
 	});
 </script>
 </html>

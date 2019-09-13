@@ -5,7 +5,7 @@ class Impor extends CI_Controller {
 
 	public function index()
 	{
-		
+		$this->load->view('modul/impor');
 	}
 
 }

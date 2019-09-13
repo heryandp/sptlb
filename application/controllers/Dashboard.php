@@ -8,6 +8,11 @@ class Dashboard extends CI_Controller {
 		$this->load->view('dashboard');
 	}
 
+	public function tentang()
+	{
+		$this->load->view('tentang');
+	}
+
 }
 
 /* End of file Dashboard.php */

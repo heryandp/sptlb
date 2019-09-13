@@ -6,7 +6,7 @@
   </div>
 </h2>
 <div class="ui accordion">
-    <a href="#" class="active item">
+    <a href="#" class="item">
       <b>Dashboard</b>
     </a>
 
@@ -14,18 +14,18 @@
       <b>Cari Berkas</b>
     </a>
 
-    <a class="title item"><b>Seksi Pelayanan</b>  <i class="dropdown icon"></i></a>
+    <a class="title item"><b>Menu Seksi</b>  <i class="dropdown icon"></i></a>
     <div class="content">
-	    <a class="active item" href="dashboard.html">Impor Berkas</a>
+	    <a class="active item" href="<?php echo site_url('impor')?>">Impor Berkas</a>
 	    <a href="<?php echo site_url('berkas_masuk')?>" class="item">
 		    <div class="ui green horizontal label">99</div>
 		    Berkas Masuk
 		  </a>
-	    <a href="#" class="item">
+	    <a href="<?php echo site_url('tindak_lanjut')?>" class="item">
 		    <div class="ui red horizontal label">99</div>
 		    Tindak Lanjut Berkas
 		</a>
-		<a href="#" class="item">
+		<a href="<?php echo site_url('selesai')?>" class="item">
 		    Selesai
 		</a>
     </div>
@@ -34,7 +34,7 @@
       <b>Pengaturan</b>
     </a>
 
-    <a href="#" class="item">
+    <a href="<?php echo site_url('tentang')?>" class="item">
      <b>Tentang</b>
     </a>
 
