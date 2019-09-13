@@ -8,7 +8,8 @@
   <div class="sixteen wide column">
 	<div class="ui segment">
 	  <p>Berkas Masuk</p>
-	  	<table class="ui small celled table">
+	  <div style="overflow-x: scroll">
+	  	<table id="tabel_berkas_masuk" class="ui small celled table">
 		  <thead>
 		    <tr><th>No</th>
 		    <th>Wajib Pajak</th>
@@ -38,9 +39,17 @@
 		    </tr>
 		  </tbody>
 	    </table>
+	   </div>
 	</div>
   </div>
 </div>
 </body>
-
+<script type="text/javascript">
+	$(document).ready(function() {
+    	$('#tabel_berkas_masuk').DataTable({
+    		"pagingType": "full_numbers",
+    	}
+    	);
+	});
+</script>
 <?php $this->load->view('template/foot'); ?>

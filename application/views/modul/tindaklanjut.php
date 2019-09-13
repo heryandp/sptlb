@@ -8,6 +8,7 @@
   <div class="sixteen wide column">
 	<div class="ui segment">
 	  <p>Tindak Lanjut Berkas</p>
+	  <div style="overflow-x: scroll">
 	  	<table class="ui small celled table">
 		  <thead>
 		    <tr><th>No</th>
@@ -38,6 +39,7 @@
 		    </tr>
 		  </tbody>
 	    </table>
+	</div>
 	</div>
   </div>
 </div>

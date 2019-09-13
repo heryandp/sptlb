@@ -3,6 +3,7 @@
 <head>
 	<title>Aplikasi SPTLB</title>
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/semantic/semantic.min.css') ?>">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/datatables.min.css') ?>">
 	<style type="text/css">
 		.marginlefting {
 		   margin-left: 60px !important;
@@ -46,8 +47,9 @@
 		 	padding-left: 5em;
 		 	padding-right: 2em;
 		 }
+
 	</style>
 	<script src="<?php echo base_url('assets/jquery-3.4.1.min.js') ?>"></script>
-    <!-- <script src="<?php echo base_url('assets/datatables/datatables.min.js') ?>"></script> -->
+    <script src="<?php echo base_url('assets/datatables.min.js') ?>"></script>
     <script src="<?php echo base_url('assets/semantic/semantic.min.js') ?>"></script>
 </head>
