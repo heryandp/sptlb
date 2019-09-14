@@ -60,5 +60,6 @@ $route['impor'] = 'modul/Impor';
 $route['berkas_masuk'] = 'modul/Berkas_masuk';
 $route['tindak_lanjut'] = 'modul/Tindaklanjut';
 $route['selesai'] = 'modul/Selesai';
+$route['detail'] = 'modul/Selesai/detail';
 $route['tentang'] = 'Dashboard/tentang';
 

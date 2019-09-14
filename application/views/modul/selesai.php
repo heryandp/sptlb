@@ -35,7 +35,7 @@
 		      <td>1 / 2016</td>
 		      <td>Restitusi</td>
 		      <td>03/09/2019</td>
-		      <td><button class="ui small grey button">Detail</button></td>
+		      <td><a href="<?php echo base_url('/detail') ?>" class="ui small grey button">Detail</a></td>
 		    </tr>
 		  </tbody>
 	    </table>

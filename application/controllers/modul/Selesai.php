@@ -8,6 +8,11 @@ class Selesai extends CI_Controller {
 		$this->load->view('modul/selesai');		
 	}
 
+	public function detail()
+	{
+		$this->load->view('modul/detail');
+	}
+
 }
 
 /* End of file Selesai.php */

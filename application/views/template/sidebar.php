@@ -16,7 +16,11 @@
 
     <a class="title item"><b>Menu Seksi</b>  <i class="dropdown icon"></i></a>
     <div class="content">
-	    <a class="active item" href="<?php echo site_url('impor')?>">Impor Berkas</a>
+	    <a class="item" href="<?php echo site_url('impor')?>">Impor Berkas</a>
+      <a href="<?php echo site_url('berkas_masuk')?>" class="item">
+        <div class="ui orange horizontal label">99</div>
+        Buat Nota Dinas
+      </a>
 	    <a href="<?php echo site_url('berkas_masuk')?>" class="item">
 		    <div class="ui green horizontal label">99</div>
 		    Berkas Masuk
