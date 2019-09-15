@@ -8,6 +8,9 @@
   <div class="sixteen wide column">
 	<div class="ui segment">
 	  <p>Impor Berkas</p>
+	  <div class="ui active dimmer">
+	    <div class="ui text loader">Loading</div>
+	  </div>
 	  <input type="file" (change)="fileEvent($event)" name="filecsv" accept=".csv" class="inputfile" id="imporcsv" />
 	  <label for="imporcsv" class="ui green button">
 	    <i class="ui download icon"></i> 
@@ -22,6 +25,7 @@
 	    <script type="text/javascript">
 		    $(function () {
 		        $("#previewcsv").bind("click", function () {
+		        	$('.ui.active.dimmer').show();
 		            var regex = /^([a-zA-Z0-9\s_\\.\-:])+(.csv|.txt)$/;
 		            if (regex.test($("#imporcsv").val().toLowerCase())) {
 		                if (typeof (FileReader) != "undefined") {
@@ -47,6 +51,7 @@
 		                        $("#tabelcsv tbody").remove();
 		                        $("#tabelcsv").append(table);
 		                        $("#uploadcsv").show();
+		                        $('.ui.active.dimmer').hide();
 		                    }
 		                    reader.readAsText($("#imporcsv")[0].files[0]);
 		                } else {
@@ -85,69 +90,40 @@
 </div>
 </body>
 <script type="text/javascript">
+	$('.ui.active.dimmer').hide();
 	$("#uploadcsv").hide();
 
 	$(document).on('click', '#uploadcsv', function(){
-		alert('YES');
+		$('.ui.active.dimmer').show();
+		var file = document.getElementById("imporcsv").files[0];
+		var allResults = [];
 
-		// Set Var dulu bos
-		var csv_npwp = [];
-		var csv_tanda_terima = [];
-		var csv_tanggal_spt = [];
-		var csv_nilai = [];
-		var csv_masa = [];
-		var csv_restitusi = [];
-		var csv_sumber = [];
-		var csv_pembetulan = [];
-		var csv_tanggal_terima = [];
-
-		// Push
-		$('.1_csv').each(function(){
-	  	 csv_npwp.push($(this).text());
-	  	});
-	  	$('.2_csv').each(function(){
-	  	 csv_tanda_terima.push($(this).text());
-	  	});
-	  	$('.3_csv').each(function(){
-	  	 csv_tanggal_spt.push($(this).text());
-	  	});
-	  	$('.4_csv').each(function(){
-	  	 csv_nilai.push($(this).text());
-	  	});
-	  	$('.5_csv').each(function(){
-	  	 csv_masa.push($(this).text());
-	  	});
-	  	$('.6_csv').each(function(){
-	  	 csv_restitusi.push($(this).text());
-	  	});
-	  	$('.7_csv').each(function(){
-	  	 csv_sumber.push($(this).text());
-	  	});
-	  	$('.8_csv').each(function(){
-	  	 csv_pembetulan.push($(this).text());
-	  	});
-	  	$('.9_csv').each(function(){
-	  	 csv_tanggal_terima.push($(this).text());
-	  	});
+		if (!$('#imporcsv')[0].files.length)
+			{
+				alert("Please choose at least one file to parse.");
+				return enableButton();
+			}
+			
+		Papa.parse(file,{
+			download: true,
+            header: true,
+            skipEmptyLines: true,
+            error: function(err, file, inputElem, reason) { },
+            complete: function(results) {
+                allResults.push(results.data);
+                // console.log(results.data)
+            },
+		});
 
 	  	// Ajax bos
 	  	$.ajax({
 	  		method:"post",
-	  		data:{npwp:csv_npwp,tanda_terima:csv_tanda_terima},
+	  		data:allResults,
 	  		success:function(data){
-	  			console.log(npwp);
+	  			console.log(allResults);
+	  			$('.ui.active.dimmer').hide();
 	  		}
 	  	});
-
-	  // $.ajax({
-	  //  url:"import.php",
-	  //  method:"post",
-	  //  data:{student_name:student_name, student_phone:student_phone},
-	  //  success:function(data)
-	  //  {
-	  //   $('#csv_file_data').html('<div class="alert alert-success">Data Imported Successfully</div>');
-	  //  }
-	  // })
 	 });
 
 </script>

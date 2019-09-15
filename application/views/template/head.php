@@ -63,4 +63,5 @@
 	<script src="<?php echo base_url('assets/jquery-3.4.1.min.js') ?>"></script>
     <script src="<?php echo base_url('assets/datatables.min.js') ?>"></script>
     <script src="<?php echo base_url('assets/semantic/semantic.min.js') ?>"></script>
+    <script src="<?php echo base_url('assets/PapaParse/papaparse.min.js') ?>"></script>
 </head>
