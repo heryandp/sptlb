@@ -2,6 +2,8 @@
 <html>
 <head>
 	<title>Aplikasi SPTLB</title>
+	<link rel="shortcut icon" href="<?php echo base_url('assets/favicon.ico') ?>" type="image/x-icon">
+	<link rel="icon" href="<?php echo base_url('assets/favicon.ico') ?>" type="image/x-icon">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/semantic/semantic.min.css') ?>">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/datatables.min.css') ?>">
 	<style type="text/css">
@@ -47,6 +49,15 @@
 		 	padding-left: 5em;
 		 	padding-right: 2em;
 		 }
+
+		 .inputfile {
+			width: 0.1px;
+			height: 0.1px;
+			opacity: 0;
+			overflow: hidden;
+			position: absolute;
+			z-index: -1;
+		}
 
 	</style>
 	<script src="<?php echo base_url('assets/jquery-3.4.1.min.js') ?>"></script>

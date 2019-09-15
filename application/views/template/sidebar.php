@@ -17,7 +17,7 @@
     <a class="title item"><b>Menu Seksi</b>  <i class="dropdown icon"></i></a>
     <div class="content">
 	    <a class="item" href="<?php echo site_url('impor')?>">Impor Berkas</a>
-      <a href="<?php echo site_url('berkas_masuk')?>" class="item">
+      <a href="<?php echo site_url('buat_nd')?>" class="item">
         <div class="ui orange horizontal label">99</div>
         Buat Nota Dinas
       </a>
