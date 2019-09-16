@@ -110,19 +110,32 @@
             skipEmptyLines: true,
             error: function(err, file, inputElem, reason) { },
             complete: function(results) {
-                allResults.push(results.data);
-                // console.log(results.data)
+            	allResults = results.data;
             },
 		});
 
 	  	// Ajax bos
 	  	$.ajax({
-	  		method:"post",
+	  		url:'impor_proses',
+	  		method:'post',
 	  		data:allResults,
 	  		success:function(data){
 	  			console.log(allResults);
 	  			$('.ui.active.dimmer').hide();
-	  		}
+	  			Swal.fire({
+				  type: 'success',
+				  title: 'Yey! Impor CSV berhasil!',
+				  showConfirmButton: true,
+				});
+	  		},
+	  		error: function (request, status, error) {
+		        Swal.fire({
+				  type: 'error',
+				  title: 'Wadooh! Impor CSV error!',
+				  showConfirmButton: true,
+				});
+				$('.ui.active.dimmer').hide();
+		    }
 	  	});
 	 });
 

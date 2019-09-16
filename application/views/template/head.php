@@ -6,6 +6,7 @@
 	<link rel="icon" href="<?php echo base_url('assets/favicon.ico') ?>" type="image/x-icon">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/semantic/semantic.min.css') ?>">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/datatables.min.css') ?>">
+	<link rel="stylesheet" href="<?php echo base_url('assets/Sweetalert/sweetalert2.min.css') ?>">
 	<style type="text/css">
 		.marginlefting {
 		   margin-left: 60px !important;
@@ -63,5 +64,6 @@
 	<script src="<?php echo base_url('assets/jquery-3.4.1.min.js') ?>"></script>
     <script src="<?php echo base_url('assets/datatables.min.js') ?>"></script>
     <script src="<?php echo base_url('assets/semantic/semantic.min.js') ?>"></script>
+	<script src="<?php echo base_url('assets/Sweetalert/sweetalert2.min.js') ?>"></script>
     <script src="<?php echo base_url('assets/PapaParse/papaparse.min.js') ?>"></script>
 </head>

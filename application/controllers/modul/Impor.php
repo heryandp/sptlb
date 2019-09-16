@@ -10,14 +10,7 @@ class Impor extends CI_Controller {
 
 	public function proses()
 	{
-	    $filename = $_FILES["filecsv"]["tmp_name"];
-	    
-	    $file = fopen($filename, "r");
-
-	    while ($getData = fgetcsv($file, 10000, ",") !== FALSE) {
-			echo $getData[0];
-			echo "1";
-	    }
+		var_dump($_POST);
 	}
 
 }
