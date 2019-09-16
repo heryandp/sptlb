@@ -96,7 +96,7 @@
 	$(document).on('click', '#uploadcsv', function(){
 		$('.ui.active.dimmer').show();
 		var file = document.getElementById("imporcsv").files[0];
-		var allResults = [];
+		var allResults;
 
 		if (!$('#imporcsv')[0].files.length)
 			{
@@ -111,32 +111,32 @@
             error: function(err, file, inputElem, reason) { },
             complete: function(results) {
             	allResults = results.data;
+			  	// Ajax bos
+			  	$.ajax({
+			  		url:'impor_proses',
+			  		method:'post',
+			  		data:{"data":allResults},
+			  		success:function(data){
+			  			console.log(allResults);
+			  			$('.ui.active.dimmer').hide();
+			  			Swal.fire({
+						  type: 'success',
+						  title: 'Yey! Impor CSV berhasil!',
+						  showConfirmButton: true,
+						});
+			  		},
+			  		error: function (request, status, error) {
+				        Swal.fire({
+						  type: 'error',
+						  title: 'Wadooh! Impor CSV error!',
+						  showConfirmButton: true,
+						});
+						$('.ui.active.dimmer').hide();
+				    }
+			  	});
             },
 		});
 
-	  	// Ajax bos
-	  	$.ajax({
-	  		url:'impor_proses',
-	  		method:'post',
-	  		data:allResults,
-	  		success:function(data){
-	  			console.log(allResults);
-	  			$('.ui.active.dimmer').hide();
-	  			Swal.fire({
-				  type: 'success',
-				  title: 'Yey! Impor CSV berhasil!',
-				  showConfirmButton: true,
-				});
-	  		},
-	  		error: function (request, status, error) {
-		        Swal.fire({
-				  type: 'error',
-				  title: 'Wadooh! Impor CSV error!',
-				  showConfirmButton: true,
-				});
-				$('.ui.active.dimmer').hide();
-		    }
-	  	});
 	 });
 
 </script>

@@ -10,7 +10,13 @@ class Impor extends CI_Controller {
 
 	public function proses()
 	{
-		var_dump($_POST);
+		// var_dump($_POST['data']);
+		foreach ($_POST['data'] as $item) {
+			$data = array(
+				'npwp' => $item['npwp'],
+			);
+			var_dump($data);
+		}
 	}
 
 }
