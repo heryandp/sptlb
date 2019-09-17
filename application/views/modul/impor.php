@@ -117,13 +117,14 @@
 			  		method:'post',
 			  		data:{"data":allResults},
 			  		success:function(data){
-			  			console.log(allResults);
+			  			// console.log(allResults);
 			  			$('.ui.active.dimmer').hide();
 			  			Swal.fire({
 						  type: 'success',
 						  title: 'Yey! Impor CSV berhasil!',
 						  showConfirmButton: true,
 						});
+						$("#tabelcsv tbody").remove();
 			  		},
 			  		error: function (request, status, error) {
 				        Swal.fire({
