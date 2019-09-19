@@ -10,7 +10,7 @@ class M_impor extends CI_Model {
 
 	function input($data)
 	{
-		$query = "INSERT IGNORE INTO t_sptlb (".$data['id_spt'].",) VALUES ()";
+		$query = "INSERT IGNORE INTO t_sptlb (id_spt,npwp,jenis_spt,tanda_terima,tgl_spt,nilai,masa,restitusi,sumber,pembetulan,user_impor) VALUES ('".$data['id_spt']."','".$data['npwp']."','".$data['jenis_spt']."','".$data['tanda_terima']."','".$data['tgl_spt']."','".$data['nilai']."','".$data['masa']."','".$data['restitusi']."','".$data['sumber']."','".$data['pembetulan']."','".$data['user_impor']."')";
 		$this->db->query($query);
 	}
 
