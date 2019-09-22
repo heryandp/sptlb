@@ -19,8 +19,13 @@ class Impor extends CI_Controller {
 		// var_dump($_POST['data']);
 		foreach ($_POST['data'] as $item) {
 			// list buta replace stringnya gaes
-			$awal = array('PPWBIDR','PPWBUSD','PPTOP','PPTOPS','PPTOPSS',',00','.');
-			$baru = array('Tahunan Badan (IDR)','Tahunan Badan (USD)','Tahunan OP','Tahunan OP S','Tahunan OP SS','','');
+			$awal = array('PPWBIDR','PPWBUSD','PPTOP','PPTOPS','PPTOPSS',',00','.','-');
+			$baru = array('Tahunan Badan (IDR)','Tahunan Badan (USD)','Tahunan OP','Tahunan OP S','Tahunan OP SS','','','.');
+
+			// NPWP
+			$npwp = substr($item['npwp'], 16);
+			$npwp = str_replace($awal, $baru, $npwp);
+			$npwp = substr($item['npwp'],0,16).$npwp;
 
 			// jenis spt
 			$jenis_spt = explode("/",$item['tanda_terima']);
@@ -42,7 +47,7 @@ class Impor extends CI_Controller {
 
 			$data = array(
 				'id_spt' => md5($item['tanda_terima']),
-				'npwp' => $item['npwp'],
+				'npwp' => $npwp,
 				'jenis_spt' => $jenis_spt,
 				'tanda_terima' => $item['tanda_terima'],
 				'tgl_spt' => $tanggal_spt,
@@ -51,6 +56,7 @@ class Impor extends CI_Controller {
 				'restitusi' => $item['restitusi'],
 				'sumber' => $item['sumber'],
 				'pembetulan' => $item['pembetulan'],
+				'tgl_terima' => $tanggal_terima,
 				'user_impor' => $user,
 			);
 

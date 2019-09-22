@@ -25,7 +25,6 @@
 	    <script type="text/javascript">
 		    $(function () {
 		        $("#previewcsv").bind("click", function () {
-		        	$('.ui.active.dimmer').show();
 		            var regex = /^([a-zA-Z0-9\s_\\.\-:])+(.csv|.txt)$/;
 		            if (regex.test($("#imporcsv").val().toLowerCase())) {
 		                if (typeof (FileReader) != "undefined") {
@@ -33,7 +32,6 @@
 		                    reader.onload = function (e) {
 		                        var table = $("<tbody/>");
 		                        var rows = e.target.result.split("\n");
-	                            console.log(rows.length);
 		                        for (var i = 1; i < rows.length-1; i++) {
 		                            var row = $("<tr/>");
 		                            var cells = rows[i].split(';');
@@ -108,7 +106,9 @@
 			download: true,
             header: true,
             skipEmptyLines: true,
-            error: function(err, file, inputElem, reason) { },
+            error: function(err, file, inputElem, reason) { 
+            	$('.ui.active.dimmer').hide();
+        	},
             complete: function(results) {
             	allResults = results.data;
 			  	// Ajax bos
@@ -117,7 +117,6 @@
 			  		method:'post',
 			  		data:{"data":allResults},
 			  		success:function(data){
-			  			// console.log(allResults);
 			  			$('.ui.active.dimmer').hide();
 			  			Swal.fire({
 						  type: 'success',

@@ -66,4 +66,5 @@
     <script src="<?php echo base_url('assets/semantic/semantic.min.js') ?>"></script>
 	<script src="<?php echo base_url('assets/Sweetalert/sweetalert2.min.js') ?>"></script>
     <script src="<?php echo base_url('assets/PapaParse/papaparse.min.js') ?>"></script>
+    <script src="<?php echo base_url('assets/currency.min.js') ?>"></script>
 </head>

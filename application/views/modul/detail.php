@@ -90,7 +90,7 @@
 		      <td><a class="ui green label">Open</a></td>
 		    </tr>
 		  </tbody>
-		</table>
+	  </table>
 
 		<!-- Histori -->
 	  	<table class="ui small celled orange table">
