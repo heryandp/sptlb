@@ -54,6 +54,7 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 // Custom Routes
+$route['login'] = 'auth/login';
 $route['dashboard'] = 'dashboard';
 $route['cari_berkas'] = 'cari';
 $route['impor'] = 'modul/Impor';
